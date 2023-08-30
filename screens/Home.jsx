@@ -5,6 +5,7 @@ import { Ionicons, Fontisto } from "@expo/vector-icons";
 import { COLORS, SIZES } from "../constants";
 import { ScrollView } from "react-native-gesture-handler";
 import Welcome from "../components/home/Welcome";
+import Carousel from "../components/home/Carousel";
 
 const Home = () => {
   return (
@@ -26,6 +27,7 @@ const Home = () => {
       </View>
       <ScrollView>
         <Welcome />
+        <Carousel />
       </ScrollView>
     </SafeAreaView>
   );
@@ -62,7 +64,7 @@ const styles = StyleSheet.create({
   cartNumber: {
     fontFamily: "regular",
     fontWeight: "600",
-    fontSize: "10",
+    fontSize: 10,
     color: COLORS.lightWhite,
   },
 });
