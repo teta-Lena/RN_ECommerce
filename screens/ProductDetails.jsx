@@ -80,11 +80,11 @@ const ProductDetails = ({ navigation }) => {
         </View>
         <View style={{ marginBottom: SIZES.small }}>
           <View style={styles.location}>
-            <View style={{ flexDirection: "row" }}>
+            <View style={{ flexDirection: "row", gap: 5, marginStart: 5 }}>
               <Ionicons name="location-outline" size={20} />
               <Text>Location</Text>
             </View>
-            <View style={{ flexDirection: "row" }}>
+            <View style={{ flexDirection: "row", gap: 5, marginEnd: 5 }}>
               <MaterialCommunityIcons name="truck-delivery-outline" size={20} />
               <Text>Free delivery</Text>
             </View>
