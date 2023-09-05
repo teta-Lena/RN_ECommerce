@@ -3,20 +3,23 @@ import React from "react";
 import { SliderBox } from "react-native-image-slider-box";
 import { COLORS } from "../../constants";
 
+const MemoizedSliderBox = React.memo(SliderBox);
+
 const Carousel = () => {
   const slides = [
     require("../../assets/images/fn1.jpg"),
     require("../../assets/images/fn2.jpg"),
     require("../../assets/images/fn3.jpg"),
   ];
-
   return (
     <View style={styles.carouselContainer}>
-      <SliderBox
+      <MemoizedSliderBox
         images={slides}
         dotColor={COLORS.primary}
         inactiveDotColor={COLORS.secondary}
-        ImageComponentStyle={{ borderRadius: 15, width: "95%", marginTop: 15 }}
+        ImageComponentStyle={{ borderRadius: 15, width: "95%", marginTop: 2 }}
+        autoplay
+        circleLoop
       />
     </View>
   );

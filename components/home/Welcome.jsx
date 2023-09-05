@@ -2,44 +2,46 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import { SIZES, COLORS } from "../../constants/index";
 import { Feather, Ionicons } from "@expo/vector-icons";
-import { TextInput } from "react-native-gesture-handler";
+import { ScrollView, TextInput } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
 const Welcome = ({}) => {
   const navigation = useNavigation();
   return (
-    <View>
-      <View style={styles.container}>
-        <Text style={styles.welcomeText(COLORS.black)}>Find the most</Text>
-        <Text style={styles.welcomeText(COLORS.primary, 0)}>
-          Luxurious Furniture
-        </Text>
-      </View>
-      <View style={styles.searchContainer}>
-        <TouchableOpacity>
-          <Feather name="search" size={24} style={styles.searchIcon} />
-        </TouchableOpacity>
-        <View style={styles.searchWrapper}>
-          <TextInput
-            style={styles.searchInput}
-            value=""
-            onPressIn={() => {
-              navigation.navigate("Search");
-            }}
-            placeholder="What are you looking for"
-          />
+    <ScrollView>
+      <View>
+        <View style={styles.container}>
+          <Text style={styles.welcomeText(COLORS.black)}>Find the most</Text>
+          <Text style={styles.welcomeText(COLORS.primary, 0)}>
+            Luxurious Furniture
+          </Text>
         </View>
-        <View>
-          <TouchableOpacity style={styles.searchBtn}>
-            <Ionicons
-              name="camera-outline"
-              size={SIZES.xLarge}
-              color={COLORS.white}
-            />
+        <View style={styles.searchContainer}>
+          <TouchableOpacity>
+            <Feather name="search" size={24} style={styles.searchIcon} />
           </TouchableOpacity>
+          <View style={styles.searchWrapper}>
+            <TextInput
+              style={styles.searchInput}
+              value=""
+              onPressIn={() => {
+                navigation.navigate("Search");
+              }}
+              placeholder="What are you looking for"
+            />
+          </View>
+          <View>
+            <TouchableOpacity style={styles.searchBtn}>
+              <Ionicons
+                name="camera-outline"
+                size={SIZES.xLarge}
+                color={COLORS.white}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -51,7 +53,8 @@ const styles = StyleSheet.create({
   },
   welcomeText: (color, marginHorizontal) => ({
     fontFamily: "bold",
-    fontSize: SIZES.xxLarge - 5,
+    fontSize: SIZES.xxLarge - 20,
+    textAlign: "center",
     marginTop: SIZES.xSmall,
     color: color,
     marginHorizontal: 12,
